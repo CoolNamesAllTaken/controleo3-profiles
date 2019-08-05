@@ -10,11 +10,11 @@ Controleo3 Reflow Profile  // This must be the first item in the file
 
 
 // The name of this profile
-Name "Leaded paste long 225~C"
+Name "Sn63Pb37 SMD291AX 235~C"
 // The deviation (in Celsius) above which to abort
 Deviation to abort 25C
 // The maximum temperature.  If exceeded, reflow will abort and the oven door opened
-Maximum temperature 240C
+Maximum temperature 260C
 // Set a maximum duty cycle to avoid damage to your oven (bottom/top/boost)
 Maximum duty 100/75/60
 
@@ -44,14 +44,14 @@ Initialize timer to 15 seconds
 // Select the heating bias (bottom/top/boost)
 Bias 100/80/60
 // Continue ramping up the temperature using PID
-Ramp temperature to 140C in 80s
+Ramp temperature to 100C in 15s
 
 // Start the soak phase
 Display "Phase: Soak"
 // Select the heating bias (bottom/top/boost)
 Bias 100/50/20
 // Slow increase in temperature during soak
-Ramp temperature to 165C in 100s
+Ramp temperature to 150C in 90s
 
 // Start the reflow phase
 Display "Phase: Reflow (boost)"
@@ -64,12 +64,12 @@ Display "Phase: Reflow"
 // Select the heating bias (bottom/top/boost)
 Bias 100/80/60
 // Ramp up the temperature for reflow
-Ramp temperature to 220C in 60s
+Ramp temperature to 235C in 80s
 
 // Hold the temperature at peak for a few seconds
 Display "Phase: Reflow (hold)"
 // Maintain peak temperature for a short while
-Maintain 225C for 60 seconds
+Maintain 235C for 20 seconds
 // Stop the timer so we know how long the reflow took
 Stop timer
 // Turn the elements off now (bottom/top/boost)
